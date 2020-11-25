@@ -1,4 +1,7 @@
-import DateFromTime from 'es-abstract/5/DateFromTime'
-import namer from './libs/name'
+import namer from "./libs/name";
 
-namer()
+namer();
+
+const togleMenu = document.querySelector(".menu");
+const profile = document.querySelector(".profile");
+profile.addEventListener("click", () => togleMenu.classList.toggle("active"));

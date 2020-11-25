@@ -1,9 +1,10 @@
 const getAndStoreName = () => {
-    const nameHolder = document.querySelector("#name");
+    const nameHolder = document.querySelectorAll("#name");
 
     localStorage.setItem("RiolpNewPageUserName", "MarioLP");
     let currentName = localStorage.getItem("RiolpNewPageUserName");
-    nameHolder.innerHTML = currentName;
+
+    nameHolder.forEach((element) => (element.innerHTML = currentName));
 
     if (!currentName) {
         let newName = prompt("Introduce your name ...");

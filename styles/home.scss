@@ -9,11 +9,10 @@
 
 .content {
     height: 100vh;
-    display: grid;
-    place-items: center;
+    @include gridCenter();
 
     .search-content {
-        width: 80%;
+        width: 65%;
 
         span#name {
             color: $accent-main;
@@ -31,6 +30,7 @@
                 @include inputStyle();
                 width: 100%;
                 color: $foreground-main;
+                transition: 0.4s;
 
                 &::placeholder {
                     color: $foreground-shade;

@@ -6,3 +6,8 @@ $foreground-shade: #5a6774;
 $main-font: "Segoe UI";
 $main-font-size: 14pt;
 $shadow: 2px 2px 14px rgba(0, 0, 0, 0.49);
+
+@mixin gridCenter {
+    display: grid;
+    place-items: center;
+}

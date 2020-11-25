@@ -1,0 +1,47 @@
+@import "./main.scss";
+
+@mixin inputStyle {
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: $main-font-size;
+}
+
+.content {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .search-content {
+        width: 80%;
+
+        span#name {
+            color: $accent-main;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            margin-bottom: 140px;
+            font-size: $main-font-size;
+            box-shadow: $shadow;
+
+            input {
+                background: $bg-accent;
+                @include inputStyle();
+                width: 100%;
+                color: $foreground-main;
+
+                &::placeholder {
+                    color: $foreground-shade;
+                }
+            }
+
+            button {
+                @include inputStyle();
+                background: $accent-main;
+                cursor: pointer;
+            }
+        }
+    }
+}

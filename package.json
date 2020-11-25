@@ -1,0 +1,24 @@
+{
+  "name": "personal-new-page",
+  "version": "1.0.0",
+  "description": "Personal new Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riolp9991/personal-new-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riolp9991/personal-new-page/issues"
+  },
+  "homepage": "https://github.com/riolp9991/personal-new-page#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.29.0"
+  }
+}

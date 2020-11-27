@@ -82,6 +82,7 @@ body {
                 a {
                     color: $foreground-main;
                     opacity: 0.5;
+                    font-size: $main-font-size;
                     transition: 0.3s;
                     cursor: pointer;
                     text-decoration: none;

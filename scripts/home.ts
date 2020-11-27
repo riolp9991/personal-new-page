@@ -21,3 +21,21 @@ searchInput?.addEventListener("keyup", (e: KeyboardEvent) => {
         searchInput.value = "";
     }
 });
+
+const links: NodeListOf<HTMLLinkElement> = document.querySelectorAll("a.link");
+
+links.forEach((link) => {
+    console.info({ Link: link.dataset.link });
+});
+
+import { Link, LinkList, testLinks } from "./libs/links/link";
+
+testLinks();
+
+const holder = document.querySelector(".holder-temp");
+
+const testList = new LinkList();
+testList.add(new Link("Youtube", "http://youtube.com/"));
+testList.add(new Link("Facebook", "http://facebook.com/"));
+
+testList.drawChilds(holder);

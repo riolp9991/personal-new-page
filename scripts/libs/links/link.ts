@@ -37,9 +37,17 @@ export class LinkList {
     }
 
     static getFromLocalStorage(): LinkList {
-        const previousStored =
-            JSON.parse(localStorage.getItem(LINK_LIST_STORE_NAME) ?? "") ?? {};
-        return new LinkList(previousStored);
+        const stored = localStorage.getItem(LINK_LIST_STORE_NAME);
+        console.log(stored);
+
+        try {
+            if (!stored) return new LinkList();
+            const values = JSON.parse(stored);
+            return new LinkList(values);
+        } catch (error) {
+            return new LinkList();
+        }
+        // return new LinkList();
     }
 
     saveToLocalStorage() {
@@ -67,8 +75,39 @@ export class LinkList {
             const newChild = document.createElement("a");
             newChild.href = element.address;
             newChild.innerText = element.name;
+            newChild.classList.add("link");
             parent.appendChild(newChild);
         });
+
+        const newButton = document.createElement("button");
+        newButton.innerText = "+";
+        newButton.classList.add("link");
+        newButton.onclick = () => {
+            this.createLink(parent);
+        };
+        parent.appendChild(newButton);
+    }
+
+    createLink(parent: Element | null) {
+        if (!parent) return;
+
+        const name = prompt("Write the link name");
+        if (!name) return;
+        const link = prompt("Write the url");
+        if (!link) return;
+
+        parent.childNodes.forEach((currentChild: ChildNode) =>
+            parent.removeChild(currentChild)
+        );
+
+        const newLink = new Link(name, link);
+
+        let currentLinks = LinkList.getFromLocalStorage();
+        currentLinks.add(newLink);
+
+        currentLinks.saveToLocalStorage();
+
+        currentLinks.drawChilds(parent);
     }
 }
 

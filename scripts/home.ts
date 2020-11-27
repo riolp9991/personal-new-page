@@ -30,12 +30,11 @@ links.forEach((link) => {
 
 import { Link, LinkList, testLinks } from "./libs/links/link";
 
-testLinks();
+// testLinks();
 
-const holder = document.querySelector(".holder-temp");
+const holder = document.querySelector(".link-holder");
 
-const testList = new LinkList();
-testList.add(new Link("Youtube", "http://youtube.com/"));
-testList.add(new Link("Facebook", "http://facebook.com/"));
+const testList = LinkList.getFromLocalStorage();
+console.warn(testList);
 
 testList.drawChilds(holder);

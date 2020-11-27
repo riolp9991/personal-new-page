@@ -114,11 +114,19 @@ body {
 }
 
 .content {
-    height: 100vh;
-    @include gridCenter();
+    max-height: 100vh;
+    padding-top: 20vh;
+    // @include gridCenter();
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
 
     .search-content {
         width: 65%;
+        margin: auto;
+        text-align: left;
 
         span#name {
             color: $accent-main;
@@ -127,7 +135,6 @@ body {
         #searchHolder {
             width: 100%;
             display: flex;
-            margin-bottom: 140px;
             font-size: $main-font-size;
             // box-shadow: $shadow;
 
@@ -168,4 +175,39 @@ body {
             }
         }
     }
+}
+
+a.link,
+button.link {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background: $bg-main;
+    color: white;
+    width: auto;
+    transition: 0.3s;
+    font-size: 12pt;
+    display: inline-block;
+    margin: 5px;
+
+    &:hover {
+        background: $bg-hover;
+    }
+}
+
+button.link {
+    border: none;
+    line-height: 20px;
+    width: 30px;
+    cursor: pointer;
+    height: 30px;
+    font-size: 15pt;
+    outline: none;
+    padding: 5px;
+}
+
+.link-holder {
+    display: flex;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }

@@ -1,23 +1,29 @@
+// Const of where the username will be stored
 const LOCAL_STORAGE_USERNAME = "RiolpNewPageUserName";
 
 const getAndStoreName = () => {
-    const nameHolder: NodeListOf<Element> = document.querySelectorAll("#name");
+    // Store all the name Holders
+    const nameHolders: NodeListOf<Element> = document.querySelectorAll("#name");
 
+    // Get the username from the local storage
     let currentName: string | null = localStorage.getItem(
         LOCAL_STORAGE_USERNAME
     );
 
+    // In case the username doesn't exist ask the user for it
     if (!currentName) currentName = askForName();
 
-    renameAllTags(nameHolder, currentName);
+    renameAllTags(nameHolders, currentName);
 };
 
+// Rename all the name holders
 const renameAllTags = (elements: NodeListOf<Element>, newName: string) => {
     elements.forEach((element) => {
         element.innerHTML = newName;
     });
 };
 
+// Ask the user for the name
 const askForName = (): string => {
     let newName: string = prompt("Introduce your name ...") ?? "You";
     console.info({ newName });

@@ -5,13 +5,9 @@ const getAndStoreName = () => {
     // Store all the name Holders
     const nameHolders: NodeListOf<Element> = document.querySelectorAll("#name");
 
-    // Get the username from the local storage
-    let currentName: string | null = localStorage.getItem(
-        LOCAL_STORAGE_USERNAME
-    );
-
-    // In case the username doesn't exist ask the user for it
-    if (!currentName) currentName = askForName();
+    // Get the username from the local storage in case the username doesn't exist ask the user for it
+    let currentName: string =
+        localStorage.getItem(LOCAL_STORAGE_USERNAME) ?? askForName();
 
     renameAllTags(nameHolders, currentName);
 };

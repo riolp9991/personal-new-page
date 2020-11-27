@@ -4,4 +4,5 @@ namer();
 
 const togleMenu = document.querySelector(".menu");
 const profile = document.querySelector(".profile");
-profile.addEventListener("click", () => togleMenu.classList.toggle("active"));
+
+profile?.addEventListener("click", () => togleMenu?.classList.toggle("active"));

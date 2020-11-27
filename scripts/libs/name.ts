@@ -21,7 +21,8 @@ const renameAllTags = (elements: NodeListOf<Element>, newName: string) => {
 
 // Ask the user for the name
 const askForName = (): string => {
-    let newName: string = prompt("Introduce your name ...") ?? "You";
+    let asked: string | null = prompt("What is your name...");
+    let newName: string = asked && asked !== "" ? asked : "You";
     console.info({ newName });
 
     localStorage.setItem(LOCAL_STORAGE_USERNAME, newName);

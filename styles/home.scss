@@ -1,7 +1,7 @@
 @import "./main.scss";
 
 @mixin inputStyle {
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     outline: none;
     font-size: $main-font-size;
@@ -14,13 +14,13 @@ body {
 .action {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 40px;
     transition: 0.5s;
 
     .profile {
         position: relative;
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
         border-radius: 100%;
         overflow: hidden;
         cursor: pointer;
@@ -37,20 +37,27 @@ body {
 
     .menu {
         position: absolute;
-        top: 80px;
-        right: -10px;
+        top: 60px;
+        right: -19px;
         padding: 14px 20px;
         background: $bg-accent;
-        width: 200px;
+        width: 180px;
+        height: 200px;
+        border-radius: 15px;
         box-shadow: $shadow;
         box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
         transition: 0.3s;
         visibility: hidden;
+        transform: scaleY(0.5);
+        transform-origin: top;
         opacity: 0;
 
         &.active {
             visibility: visible;
             opacity: 1;
+            width: 200px;
+            height: auto;
+            transform: scaleY(1);
         }
 
         h3,
@@ -121,7 +128,7 @@ body {
             display: flex;
             margin-bottom: 140px;
             font-size: $main-font-size;
-            box-shadow: $shadow;
+            // box-shadow: $shadow;
 
             input {
                 background: $bg-accent;
@@ -129,6 +136,7 @@ body {
                 width: 100%;
                 color: $foreground-main;
                 transition: 0.4s;
+                border-radius: 22px;
 
                 &::placeholder {
                     color: $foreground-shade;
